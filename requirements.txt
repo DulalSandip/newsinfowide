@@ -27,7 +27,7 @@ decorator==4.4.1
 defusedxml==0.6.0
 diGraph==0.1.4
 dill==0.3.1.1
-Django==2.2.5
+Django==2.2.10
 django-bootstrap-form==3.4
 django-ckeditor==5.9.0
 django-crispy-forms==1.9.0
