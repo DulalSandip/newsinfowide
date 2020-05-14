@@ -11,7 +11,7 @@ awscli==1.16.174
 backcall==0.1.0
 barrier==0.2.2
 beautifulsoup4==4.7.1
-bleach==3.1.0
+bleach==3.1.4
 boto3==1.9.164
 botocore==1.12.164
 canvasvg==1.0.5
