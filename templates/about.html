@@ -1,0 +1,86 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block extraheader %}
+<!-- Page Header -->
+<div class="page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				<ul class="page-header-breadcrumb">
+					<li><a href="index.html">Home </a></li>
+					<li>About Us</li>
+				</ul>
+				<h1>About Us</h1>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Page Header -->
+{% endblock %}
+{% block content %}
+<!-- section -->
+<div class="section">
+	<!-- container -->
+	<div class="container">
+		<!-- row -->
+		<div class="row">
+			<div class="col-md-8">
+				<div class="section-row">
+					<p> The site is established to provide current information , trending news and lots of meme viral post. we are officially belongs to the facebook page  "Solti giddhii nagarna la"</p>
+					<figure class="figure-img">
+						<img class="img-responsive" src="{% static 'img/about-1.jpg' %}" alt="Cover Photo">
+					</figure>
+					<p>So we are back to the official site to provide meme news with additional lots of information , such as :</p>
+				</div>
+				<div class="row section-row">
+					<div class="col-md-6">
+						<figure class="figure-img">
+							<img class="img-responsive" src="{% static 'img/about-2.jpg' %}" alt="">
+						</figure>
+					</div>
+					<div class="col-md-6">
+						<h3>Our Mission</h3>
+					<!--	<p>Id usu mutat debet tempor, fugit omnesque posidonium nec ei. An assum labitur ocurreret qui, eam aliquid ornatus tibique ut.</p> -->
+						<ul class="list-style">
+							<li><p>Politics news </p></li>
+							<li><p>Trending News</p></li>
+							<li><p>Meme ,troll and sarcasm stufss</p></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- aside -->
+			<div class="col-md-4">
+				<!-- ad -->
+				<div class="aside-widget text-center">
+					<a href="#" style="display: inline-block;margin: auto;">
+						<img class="img-responsive" src="{% static 'img/ad-1.jpg' %}" alt="Add Image">
+					</a>
+				</div>
+				<!-- /ad -->
+
+				<!-- post widget -->
+				<div class="aside-widget">
+					<div class="section-title">
+						<h2>Most Read</h2>
+					</div>
+					{% for post in most_read_post %}
+					<div class="post post-widget">
+						<a class="post-img" href="{% url 'blog-post' post.id %}"><img src="{{ post.image.url }}" alt=""></a>
+						<div class="post-body">
+							<h3 class="post-title"><a href="{% url 'blog-post' post.id %}">{{ post.title }}</a></h3>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+				<!-- /post widget -->
+			</div>
+			<!-- /aside -->
+		</div>
+		<!-- /row -->
+	</div>
+	<!-- /container -->
+</div>
+<!-- /section -->
+{% endblock %}

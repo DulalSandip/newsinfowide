@@ -1,0 +1,79 @@
+{% load static %}
+
+<footer id="footer">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <div class="col-md-5">
+        <div class="footer-widget">
+          <div class="footer-logo">
+            <a href="{% url 'home' %}" class="logo"><img src="{% static './img/logopage2.png' %}" alt=""></a>
+          </div>
+          <ul class="footer-nav">
+            
+            <h4><li><a href="#">Privacy Policy</a></b></li></h4>
+            
+          </ul>
+          <div class="footer-copyright">
+           
+            <span>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | official facebook page  <a  href = "https://www.facebook.com/solti.giddhii.nagarna.la/" target = "_blank"><i class="fa fa-facebook" aria-hidden="true"></i> solti giddhii nagarna la</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="footer-widget">
+              <h3 class="footer-title">About Us</h3>
+              <ul class="footer-links">
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                
+                <li><a href="{% url 'contact' %}">Contacts</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="footer-widget">
+              <h3 class="footer-title">Catagories</h3>
+              <ul class="footer-links">
+                {% for menu in menu %}
+                <li><a href="{% url 'category' menu.menu %}">{{ menu.menu }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="footer-widget">
+          <h3 class="footer-title">Subscribe to get notification</h3>
+          <div class="footer-newsletter">
+            <form method="post">
+              {% csrf_token %}
+              {{ forms.email }}
+              <button class="newsletter-btn"><i class="fa fa-paper-plane"></i></button>
+            </form>
+          </div>
+          <ul class="footer-social">
+            <li><a href="https://www.facebook.com/sharer.php?u=" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            
+            <li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+  {% block extrafooter %}
+
+  {% endblock %}
+</footer>
