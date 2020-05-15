@@ -7,6 +7,12 @@ verify_ssl = true
 
 [packages]
 gunicorn = "*"
+django = "*"
+whitenoise = "*"
+django-ckeditor = "*"
+django-filter = "*"
+django-js-asset = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.7"
