@@ -1,1 +1,1 @@
-web: gunicorn newsinfowide.wsgi --log-file -
+web: gunicorn webmagblog.wsgi --log-file -
