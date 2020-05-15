@@ -1,1 +1,1 @@
-web: gunicorn webmagblog.wsgi --log-file -
+web: gunicorn webmagblog.wsgi:application --log-file -
